@@ -3,7 +3,10 @@
         <h1>
             soy el home bro 😎
         </h1>
-        <section class="wrapper" v-for="countrie in countries" v-bind:key="countrie.name">
+        <section class="search">
+            <input type="text" v-model="searchCountrie">
+        </section>
+        <section class="wrapper" v-for="countrie in filterCountries" v-bind:key="countrie.name">
             <Card
             :nameCountrie="countrie.name"
             :flag="countrie.flag"
@@ -24,7 +27,15 @@ export default {
     },
     data() {
         return {
-            countries: []
+            countries: [],
+            searchCountrie: ''
+        }
+    },
+    computed:{
+        filterCountries() {
+            const filterValue = this.searchCountrie.toLowerCase();
+            const result = this.countries.filter(countrie => countrie.name.toLowerCase().includes(filterValue) );
+            return result;
         }
     },
     async created() {
