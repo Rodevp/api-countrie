@@ -1,6 +1,6 @@
 <template>
   <header>
-    header 😎
+    Countries App - Made in Vue 💚💚
   </header>
 </template>
 

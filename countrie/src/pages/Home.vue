@@ -62,7 +62,6 @@ export default {
         margin: 2px 10%;
     }
     .wrapper {
-        border: 1px solid black;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
